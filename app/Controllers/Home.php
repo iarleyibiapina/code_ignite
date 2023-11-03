@@ -10,7 +10,7 @@ class Home extends BaseController
     }
     public function testeClass(): string
     {
-        return "teste message";
+        return view('Pages/index');
         // return view('');
     }
 }
