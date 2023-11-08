@@ -1,4 +1,6 @@
+<footer>    
+    rodapé
+</footer>
 
-<span>Footer</span>
 </body>
 </html>
