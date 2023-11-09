@@ -6,11 +6,11 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view('main');
+        return view('Pages/main');
     }
-    public function testeClass(): string
-    {
-        return view('Pages/index');
-        // return view('');
+
+    public function destroySession(){
+        session()->destroy();
+        return redirect()->to('/');
     }
 }
