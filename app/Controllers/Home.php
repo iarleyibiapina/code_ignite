@@ -4,13 +4,13 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('main');
+        return redirect()->to('To_Do');
     }
-    public function testeClass(): string
-    {
-        return view('Pages/index');
-        // return view('');
+
+    public function destroySession(){
+        session()->destroy();
+        return redirect()->to('/');
     }
 }
