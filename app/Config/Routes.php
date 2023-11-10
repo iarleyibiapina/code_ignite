@@ -19,8 +19,7 @@ $routes->get('/', function(){
 
 // metodo get, nome da url, controller, classe do controller
 
-$routes->get('/main', 'Home::index');
-$routes->get('/logout', 'Home::destroySession');
+$routes->get('/index', 'Home::testeClass');
 $routes->get('/Page', [PageController::class, "indexClassePage"]);
 // // rota dinamica    
 
@@ -28,9 +27,8 @@ $routes->get('/Page', [PageController::class, "indexClassePage"]);
 $routes->get('/register', [RegisterController::class,'index']);
 $routes->post('/register', [RegisterController::class,'create']);
 
-// utilizar rotas nomeadas com ['as' => 'register'].
 $routes->get('/login', [LoginController::class,'index']);
-$routes->post('/login', [LoginController::class,'loginProccess']);
+// $routes->get('/login', [LoginController::class,'index']);
 // $routes->get('(:segment)', [PageController::class, "view"]);
 
 /*
