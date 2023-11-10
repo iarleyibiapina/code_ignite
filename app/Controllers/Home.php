@@ -4,9 +4,9 @@ namespace App\Controllers;
 
 class Home extends BaseController
 {
-    public function index(): string
+    public function index()
     {
-        return view('Pages/main');
+        return redirect()->to('To_Do');
     }
 
     public function destroySession(){

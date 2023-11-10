@@ -3,11 +3,14 @@
 use App\Controllers\PageController;
 use App\Controllers\RegisterController;
 use App\Controllers\LoginController;
+use App\Controllers\ToDoController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
  */
+
+ // get,post, put, delete
 $routes->get('/', function(){
     return view('index');
 });
@@ -27,4 +30,21 @@ $routes->post('/register', [RegisterController::class,'create']);
 $routes->get('/login', [LoginController::class,'index']);
 $routes->post('/login', [LoginController::class,'loginProccess']);
 // $routes->get('(:segment)', [PageController::class, "view"]);
+
+/*
+index
+create
+show
+edit
+update
+delete
+*/
+
+// $routes->get('/To_do_Registro', [ToDoController::class,'']);
+// $routes->post();
+// $routes->put();
+// $routes->delete();
+
+$routes->resource('/To_Do', ['controller' => 'ToDoController']);
+
 
