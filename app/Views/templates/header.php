@@ -6,4 +6,7 @@
     <title><?= esc($title) ?></title>
 </head>
 <body>
+<!-- exibir uma variavel com nome title-->
+ <!-- a função esc, é do code, serve para segurança contra ataques xss--> 
+ <h1><?= esc($title) ?></h1>
 <h2>CABEÇLHO</h2>
