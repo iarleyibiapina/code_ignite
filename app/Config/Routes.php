@@ -5,14 +5,11 @@ use App\Controllers\PagesController;
 use App\Controllers\PageController;
 use App\Controllers\RegisterController;
 use App\Controllers\LoginController;
-use App\Controllers\ToDoController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
  * @var RouteCollection $routes
  */
-
- // get,post, put, delete
 $routes->get('/', function(){
     return view('index');
 });
@@ -46,11 +43,6 @@ delete
 // $routes->delete();
 
 $routes->resource('/To_Do', ['controller' => 'ToDoController']);
-
-$routes->get('news', [NewsController::class, 'index']);
-$routes->get('news/new', [NewsController::class, 'new']);
-$routes->post('news', [NewsController::class, 'create']);
-$routes->get('news/(:segment)', [NewsController::class, 'show']);
 
 $routes->get("pages", [PagesController::class, 'index']);
 // $routes->get("(:segment)", [PagesController::class, 'view']);
