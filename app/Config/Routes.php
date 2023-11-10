@@ -17,13 +17,6 @@ $routes->get('/', function(){
     return view('index');
 });
 
-// metodo get, nome da url, controller, classe do controller
-
-$routes->get('/main', 'Home::index');
-$routes->get('/logout', 'Home::destroySession');
-$routes->get('/Page', [PageController::class, "indexClassePage"]);
-// // rota dinamica    
-
 // $routes->get('/register', [RegisterController::class,'index'], ['as' => 'register']);
 $routes->get('/register', [RegisterController::class,'index']);
 $routes->post('/register', [RegisterController::class,'create']);
@@ -41,26 +34,14 @@ edit
 update
 delete
 */
-
-// $routes->get('/To_do_Registro', [ToDoController::class,'']);
+// $routes->get();
 // $routes->post();
 // $routes->put();
 // $routes->delete();
 
+$routes->get('/main', 'Home::index');
+
 $routes->resource('/To_Do', ['controller' => 'ToDoController']);
 
-$routes->get('news', [NewsController::class, 'index']);
-$routes->get('news/new', [NewsController::class, 'new']);
-$routes->post('news', [NewsController::class, 'create']);
-$routes->get('news/(:segment)', [NewsController::class, 'show']);
-
-$routes->get("pages", [PagesController::class, 'index']);
-// $routes->get("(:segment)", [PagesController::class, 'view']);
-// metodo get, nome da url, controller, classe do controller
-
-$routes->get('/index', 'Home::testeClass');
-$routes->get('/Page', [PageController::class, "indexClassePage"]);
-// // rota dinamica    
-
-
+$routes->get('/logout', 'Home::destroySession');
 

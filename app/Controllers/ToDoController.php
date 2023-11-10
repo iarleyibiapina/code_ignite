@@ -41,12 +41,15 @@ class ToDoController extends BaseController
         //     'corpo' => 'Um corpo',
         // ];
         $model = model(ToDoUserModel::class);
-
+        $titulo['titulo'] = 'Login';
         $data['data'] = $model->findAll();
 
-        dd($data);
+        // dd($data);
 
-        return view('Pages/main') . $data;
+        return 
+        view('templates/header')
+        .view('Pages/main', $data + $titulo)
+        .view('templates/footer');
     }
 
     public function new(){
