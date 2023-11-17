@@ -20,7 +20,6 @@
         <br>
         nome: <?= session()->get('usuarioLogado')['nomeDeUsuario'] ?>
     <?php endif;?>
-    Ola mundo
     <a href="<?= ("logout") ?>">Logout</a>
     </header>
     <section>
@@ -44,7 +43,7 @@
                         <th><?= $dado_item['to_do_name'] ?></th>
                         <th><?= $dado_item['to_do_body'] ?></th>
                         <th>
-                        <button><a href="#">edit</a></button>
+                        <button><a href="<?= ("To_Do/$dado_item[to_do_id]/edit") ?>">edit</a></button>
                         delete
                         </th>
                     </tr>

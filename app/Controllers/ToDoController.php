@@ -70,12 +70,20 @@ class ToDoController extends BaseController
         model(ToDoUserModel::class)->save($dados);
         return redirect()->to('/To_Do');
     }
-    public function edit(){
-        echo 'edit';
-        // return view("Pages/ToDo/create");
+    public function edit($id){
+        // echo 'edit';
+
+        $dados['dados'] = model(ToDoUserModel::class)->find($id);
+        // return view("Pages/ToDo/edit", $dados);
+        
+        dd($dados);
     }
     public function update(){
+        // $user = $userModel->find($user_id);
         echo 'update';
+        $model = model(ToDoUserModel::class);
+
+        // $model = update($id, $dada);
     }
     public function delete(){
         echo 'delete';

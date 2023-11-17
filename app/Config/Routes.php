@@ -43,5 +43,9 @@ $routes->get('/main', 'Home::index');
 
 $routes->resource('/To_Do', ['controller' => 'ToDoController']);
 
-$routes->get('/logout', 'Home::destroySession');
+// rotas para API, endpoint
+$routes->resource('/api', ['controller' => 'Api\LivroController']);
 
+
+
+$routes->get('/logout', 'Home::destroySession');
