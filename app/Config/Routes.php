@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Consumir\ConsumirController;
 use App\Controllers\NewsController;
 use App\Controllers\PagesController;
 use App\Controllers\PageController;
@@ -46,6 +47,7 @@ $routes->resource('/To_Do', ['controller' => 'ToDoController']);
 // rotas para API, endpoint
 $routes->resource('/api', ['controller' => 'Api\LivroController']);
 
-
+// consumir, necessa de outro projeto, outra porta 'php spark serve --port 9090
+$routes->get("consumir", [ConsumirController::class, 'index']);
 
 $routes->get('/logout', 'Home::destroySession');
